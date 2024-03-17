@@ -5,25 +5,17 @@ let displayNomes = document.getElementById('lista-amigos');
 let amigosArray = [];
 
 function adicionar() {
-
     if (nomeAmigo.value == "") {
         alert('Digite um nome!');
         return;
     } else if (amigosArray.includes(nomeAmigo.value)) {
         alert('Nome já adicionado!');
         return;
+    } else {
+        amigosArray.push(nomeAmigo.value);
+        displayNomes.innerHTML = amigosArray;
+        nomeAmigo.value = "";
     }
-    
-    amigosArray.push(nomeAmigo.value);
-    displayNomes.innerHTML = amigosArray;
-    
-
-
-    //limpar o input
-    //
-
-
-
 }
 
 function sortear() {
