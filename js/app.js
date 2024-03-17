@@ -1,6 +1,7 @@
 
 let nomeAmigo = document.getElementById('nome-amigo');
 let displayNomes = document.getElementById('lista-amigos');
+let resultado = document.getElementById('lista-sorteio');
 
 let amigosArray = [];
 
@@ -10,6 +11,7 @@ function adicionar() {
         return;
     } else if (amigosArray.includes(nomeAmigo.value)) {
         alert('Nome já adicionado!');
+        nomeAmigo.value = "";
         return;
     } else {
         amigosArray.push(nomeAmigo.value);
@@ -19,7 +21,16 @@ function adicionar() {
 }
 
 function sortear() {
-    //selecionar um valor do input de erray amigos de forma aleatoria 
+    let sorteado = Math.floor(Math.random() * amigosArray.length);
+
+    if (amigosArray.length == 0) {
+        alert('Nenhum nome adicionado!');
+        return;
+    } else {
+        resultado.innerHTML = amigosArray[sorteado];
+        amigosArray.pop(sorteado);
+        displayNomes.innerHTML = amigosArray;
+    }
 }
 
 function reiniciar() {
