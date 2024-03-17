@@ -34,7 +34,7 @@ function sortear() {
 }
 
 function reiniciar() {
-    if (amigosArray.length == 0) {
+    if (amigosArray.length == 0 && resultado.innerHTML == "") {
         alert('Nenhum nome adicionado!');
         return;
     } else if (confirm('Deseja reiniciar?')) {
