@@ -1,13 +1,24 @@
 
 let nomeAmigo = document.getElementById('nome-amigo');
-let listaNomes = document.getElementById('lista-amigos');
+let displayNomes = document.getElementById('lista-amigos');
+
+let amigosArray = [];
 
 function adicionar() {
 
+    if (nomeAmigo.value == "") {
+        alert('Digite um nome!');
+        return;
+    } else if (amigosArray.includes(nomeAmigo.value)) {
+        alert('Nome já adicionado!');
+        return;
+    }
+    
+    amigosArray.push(nomeAmigo.value);
+    displayNomes.innerHTML = amigosArray;
     
 
-    //pegar o valor do input
-    //adicinar o valor do input no array amigos incluidos
+
     //limpar o input
     //
 
