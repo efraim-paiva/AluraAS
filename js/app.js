@@ -28,15 +28,19 @@ function sortear() {
         return;
     } else {
         resultado.innerHTML = amigosArray[sorteado];
-        amigosArray.pop(sorteado);
+        amigosArray.splice(sorteado, 1);
         displayNomes.innerHTML = amigosArray;
     }
 }
 
 function reiniciar() {
-    //limpa o array de amigos incluidos
-    //limpa o input
-    //limpa o resultado
-
-
+    if (amigosArray.length == 0) {
+        alert('Nenhum nome adicionado!');
+        return;
+    } else if (confirm('Deseja reiniciar?')) {
+        amigosArray = [];
+        displayNomes.innerHTML = "";
+        resultado.innerHTML = "";
+        nomeAmigo.value = "";
+    }
 }
