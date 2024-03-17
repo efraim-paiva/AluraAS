@@ -33,11 +33,25 @@ function sortear() {
     if (amigosArray.length == 0) {
         alert('Nenhum nome adicionado!'); // Alert user if no friends are added
         return;
+    } else if (amigosArray.length == 1) {
+        alert('Apenas um nome adicionado!'); // Alert user if only one friend is added
     } else {
-        // Generate a random index to select a friend
-        let sorteado = Math.floor(Math.random() * amigosArray.length);
-        resultado.innerHTML = amigosArray[sorteado]; // Display the selected friend
-        amigosArray.splice(sorteado, 1); // Remove the selected friend from the list
+        // Randomly select two friends from the list
+        let sorteado1
+        let sorteado2
+        
+        while (true) {
+             sorteado1 = Math.floor(Math.random() * amigosArray.length);
+             sorteado2 = Math.floor(Math.random() * amigosArray.length);
+            if (sorteado1 !== sorteado2) {
+                break;
+            }
+        }
+
+        resultado.innerHTML = `${amigosArray[sorteado1]} -> ${amigosArray[sorteado2]}`; // Display the selected friends
+
+        amigosArray.splice(sorteado1, 1); // Remove the selected friend from the list
+        amigosArray.splice(sorteado2 < sorteado1 ? sorteado2 : sorteado2 - 1, 1); // Remove the selected friend from the list
         displayNomes.innerHTML = amigosArray; // Update the displayed list of friends
     }
 }
