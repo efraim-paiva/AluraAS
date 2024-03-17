@@ -39,10 +39,10 @@ function sortear() {
         // Randomly select two friends from the list
         let sorteado1
         let sorteado2
-        
+
         while (true) {
-             sorteado1 = Math.floor(Math.random() * amigosArray.length);
-             sorteado2 = Math.floor(Math.random() * amigosArray.length);
+            sorteado1 = Math.floor(Math.random() * amigosArray.length);
+            sorteado2 = Math.floor(Math.random() * amigosArray.length);
             if (sorteado1 !== sorteado2) {
                 break;
             }
