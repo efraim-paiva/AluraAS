@@ -70,4 +70,4 @@ function reiniciar() {
         resultado.innerHTML = ""; // Clear the displayed result
         nomeAmigo.value = ""; // Clear the input field
     }
-}
+} 
