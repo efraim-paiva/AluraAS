@@ -8,7 +8,12 @@ let amigosArray = [];
 
 // Function to add a new friend
 function adicionar() {
+
+    // Transform the names into lower case
+    nomeAmigo.value = nomeAmigo.value.toLowerCase()
+
     // Check if the input field is empty
+
     if (nomeAmigo.value == "") {
         alert('Digite um nome!'); // Alert user to input requirement
         return;
